@@ -47,7 +47,7 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, Task $task)
     {
         $validated = $request->validate([
             'name' => 'required',
@@ -75,6 +75,12 @@ class TaskController extends Controller
     public function destroy(Task $task)
     {
         $task->delete();
+
+
+        session()->flash('flash.banner', 'Task deleted successfully');
+        session()->flash('flash.bannerStyle', 'success');
+
+
         return redirect()->back();
     }
 }

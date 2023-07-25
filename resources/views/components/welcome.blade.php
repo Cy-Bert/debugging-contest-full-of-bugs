@@ -34,7 +34,7 @@
         Screenshots
     </h2>
     <div class="grid grid-cols-3 gap-4 mt-4">
-        @for ($i = 1; $i < 2; $i++)
+        @for ($i = 1; $i < 4; $i++)
             <x-modal-img url="{{ asset('screenshots/' . $i . '.png') }}" callback="openImage{{ $i }}" alt="app screenshot #{{ $i }}" />
         @endfor
     </div>
